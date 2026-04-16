@@ -64,5 +64,14 @@ Testele manuale acopera strategii complete de testare (clase echivalenta, valori
 - JaCoCo: https://www.jacoco.org/
 - PIT: https://pitest.org/
 - GitHub Copilot: https://github.com/features/copilot
+- Triangle Calculator (verficare vizuala): https://www.calculator.net/triangle-calculator.html
+
+### Cursuri si resurse pentru testare
+- **Udemy - Java Unit Testing with JUnit & Mockito** - Curs complet despre strategii de testare in Java
+- **Coursera - Software Testing and Quality Assurance** - Noțiuni fundamentale despre testare
+
+### Citare metodologie
+> "Test-Driven Development workflow: RED (test esueaza) → GREEN (cod trece test) → REFACTOR (imbunatateste cod). Aceasta ciclare continua asigura cod robust si testabil."
+> — TDD Best Practices, adaptat din "Clean Code" - Robert C. Martin
 
 > Nota: Proiectul este original si foloseste surse oficiale si noastre pentru documentatie, teste si analiza.

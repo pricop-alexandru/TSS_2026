@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2026-04-16T00:00:00.000Z" agent="Mozilla/5.0" version="20.0.1" type="device">
+  <diagram id="triangle-classifier" name="TriangleClassifier">
+    <mxGraphModel dx="1002" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="isValidTriangle(a, b, c)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE599;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="classify(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="120" y="150" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="isRightTriangle(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="EQUILATERAL / ISOSCELES / SCALENE / RIGHT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="560" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

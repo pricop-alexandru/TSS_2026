@@ -1,0 +1,68 @@
+package ro.edu.fmi.tss;
+
+import java.util.Arrays;
+
+public class TriangleClassifier {
+
+    private TriangleClassifier() {
+        // Utility class
+    }
+
+    public static TriangleType classify(int a, int b, int c) {
+        if (!isValidTriangle(a, b, c)) {
+            return TriangleType.INVALID;
+        }
+
+        if (a == b && b == c) {
+            return TriangleType.EQUILATERAL;
+        }
+
+        boolean right = isRightTriangle(a, b, c);
+        boolean isosceles = a == b || a == c || b == c;
+
+        if (right) {
+            return TriangleType.RIGHT_SCALENE;
+        }
+        if (isosceles) {
+            return TriangleType.ISOSCELES;
+        }
+        return TriangleType.SCALENE;
+    }
+
+    public static boolean isValidTriangle(int a, int b, int c) {
+        return a > 0 && b > 0 && c > 0
+                && a + b > c
+                && a + c > b
+                && b + c > a;
+    }
+
+    public static boolean isRightTriangle(int a, int b, int c) {
+        if (!isValidTriangle(a, b, c)) {
+            return false;
+        }
+
+        int[] sides = {a, b, c};
+        Arrays.sort(sides);
+        int x = sides[0];
+        int y = sides[1];
+        int z = sides[2];
+
+        return x * x + y * y == z * z;
+    }
+
+    public static double area(int a, int b, int c) {
+        if (!isValidTriangle(a, b, c)) {
+            throw new IllegalArgumentException("Invalid triangle sides");
+        }
+
+        double s = (a + b + c) / 2.0;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    public static int perimeter(int a, int b, int c) {
+        if (!isValidTriangle(a, b, c)) {
+            throw new IllegalArgumentException("Invalid triangle sides");
+        }
+        return a + b + c;
+    }
+}

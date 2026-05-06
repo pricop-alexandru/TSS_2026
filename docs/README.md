@@ -2,76 +2,75 @@
 
 ## Descriere generala
 Tema: T3 Testare unitara in Java.
-Proiectul contine o clasa Java care clasifica triunghiurile si o suita de teste unitare JUnit 5.
+
+Acest proiect arata o abordare completa de testare unitara pentru un clasificator de triunghiuri cu:
+- clasificare tip triunghi
+- clasificare tip unghi
+- calcul aria, perimetru, semiperimetru, inaltime
+- teste manuale si AI
+- raportare JaCoCo si PIT
 
 ## Structura proiectului
-- `pom.xml` - configuratie Maven pentru compilare, testare, acoperire si analiza mutantilor.
-- `src/main/java/ro/edu/fmi/tss` - cod sursa aplicatie.
-- `src/test/java/ro/edu/fmi/tss` - teste unitare manuale si teste autogenerate AI.
-- `docs/diagrams/triangle-classification.drawio` - diagrama UML / flux de clasificare.
-- `docs/ai-report.md` - raport despre utilizarea tool-ului AI.
-- `docs/presentation.md` - prezentare condusa in format Remark.js.
+- `pom.xml` - configuratie Maven pentru compilare, teste, acoperire si analiza mutantilor
+- `src/main/java/ro/edu/fmi/tss` - cod sursa aplicatie
+- `src/test/java/ro/edu/fmi/tss` - teste unitare
+- `docs/diagrams/triangle-classification.drawio` - diagrama de flux si UML
+- `docs/ai-report.md` - raport despre utilizarea AI in testare
+- `docs/presentation.md` - prezentare proiect in format markdown + remark
 
 ## Configuratie software
-- Java 17+ recomandat.
-- Maven 3.8+ pentru rulare locala.
-- JUnit 5 pentru testare.
-- JaCoCo pentru acoperire cod.
-- PIT pentru analiza mutantilor.
+- Java 17 sau mai nou
+- Maven 3.8+
+- JUnit 5
+- JaCoCo
+- PIT
+
+## Tema si evolutie
+Tema initiala era o tematica simpla de clasificare triunghiuri. Pentru a demonstra fundamentele testarii unitare am extins proiectul astfel:
+- adaugare clasificare unghiuri
+- masurare arie si inaltime
+- teste pentru partiitionare, frontiera, decizie si conditie
+- comparatie intre teste manuale si teste generate de AI
+- verificare mutation testing si imbunatatire teste
 
 ## Strategii de testare
-- **Partitionare in clase de echivalenta**: triunghi valid, triunghi invalid, echilateral, isoscel, scalene, dreptunghic.
-- **Analiza valorilor de frontiera**: laturi nule / negative (0, -3), laturi mici valide (1, 1, 1), laturi care incalca inegalitatea triunghiului (1, 2, 10).
-- **Acoperire la nivel de instructiune si decizie**: branch-urile `INVALID`, `EQUILATERAL`, `RIGHT_SCALENE`, `ISOSCELES`, `SCALENE`.
-- **Analiza mutanti**: plugin PIT configurat pentru mutatori de conditii si returnari. Comenzile recomandate: `mvn test` si `mvn org.pitest:pitest-maven:mutationCoverage`.
+- Partitionare in clase de echivalenta
+- Analiza valorilor de frontiera
+- Acoperire la nivel de instructiune si decizie
+- Teste circuit independent
+- Analiza raportului de mutanti
 
 ## Cum se ruleaza
-1. Instalati Maven si Java 17.
-2. Din directorul proiectului, rulati:
-   - `mvn test`
+1. Instalati Java 17 si Maven 3.8+
+2. Din directorul proiectului rulati:
+   - `mvn clean test`
    - `mvn test jacoco:report`
    - `mvn org.pitest:pitest-maven:mutationCoverage`
 
-## Rezultate testare
+## Rezultate principale
+- **Teste totale**: 17
+- **Teste manuale**: 12
+- **Teste AI**: 5
+- **Status**: toate testele trec
+- **Acoperire JaCoCo**: 87%
+- **Mutation score PIT**: 87%
+- **PIT line coverage**: 95%
 
-### Teste unitare
-- **Total teste**: 12 (7 manuale + 5 AI generate)
-- **Status**: Toate testele trec ✅
-- **Timp executie**: ~0.1 secunde
+## Comparatie manual vs AI
+- Testele manuale includ explicite scenarii de frontieră, clase de echivalență și verificări asupra fiecărei decizii
+- Testele AI sunt utile pentru prototipare, dar nu acoperă complet valori de frontieră și situații de invaliditate
 
-### Acoperire cod (JaCoCo)
-- **Linii acoperite**: 34/39 (87%)
-- **Raport generat**: `target/site/jacoco/index.html`
-
-### Analiza mutanti (PIT)
-- **Mutanti generati**: 25
-- **Mutanti ucisi**: 18 (72%)
-- **Putere teste**: 72%
-- **Teste per mutant**: 3.44
-- **Raport generat**: `target/pit-reports/index.html`
-
-#### Detalii mutatori:
-- `CONDITIONALS_BOUNDARY`: 6 mutanti, 0 ucisi (0%)
-- `VOID_METHOD_CALLS`: 1 mutant, 0 ucisi (0%)  
-- `NEGATE_CONDITIONALS`: 18 mutanti, 18 ucisi (100%)
-- `INVERT_NEGS`: Nu au fost generati mutanti
-
-### Comparatie teste manuale vs AI
-Testele manuale acopera strategii complete de testare (clase echivalenta, valori frontiera, acoperire decizii), in timp ce testele AI sunt mai simple si functionale. Testele manuale au dus la o acoperire mai buna si detectie mai eficienta a mutantilor.
+## Diagrama si capturi ecran
+- `docs/diagrams/triangle-classification.drawio` - diagrama fluxului de clasificare și testare
+- `docs/screenshots/Test1_jacoco.png` - captură ecran raport JaCoCo (set 1)
+- `docs/screenshots/Test1_pit.png` - captură ecran raport PIT (set 1)
+- `docs/screenshots/Test2_jacoco.png` - captură ecran raport JaCoCo (set 2)
+- `docs/screenshots/Test2_pit.png` - captură ecran raport PIT (set 2)
 
 ## Referinte
 - JUnit 5: https://junit.org/junit5/
 - JaCoCo: https://www.jacoco.org/
 - PIT: https://pitest.org/
 - GitHub Copilot: https://github.com/features/copilot
-- Triangle Calculator (verficare vizuala): https://www.calculator.net/triangle-calculator.html
 
-### Cursuri si resurse pentru testare
-- **Udemy - Java Unit Testing with JUnit & Mockito** - Curs complet despre strategii de testare in Java
-- **Coursera - Software Testing and Quality Assurance** - Noțiuni fundamentale despre testare
-
-### Citare metodologie
-> "Test-Driven Development workflow: RED (test esueaza) → GREEN (cod trece test) → REFACTOR (imbunatateste cod). Aceasta ciclare continua asigura cod robust si testabil."
-> — TDD Best Practices, adaptat din "Clean Code" - Robert C. Martin
-
-> Nota: Proiectul este original si foloseste surse oficiale si noastre pentru documentatie, teste si analiza.
+> Proiectul este original si foloseste surse oficiale si referinte mentionate in documentatie.

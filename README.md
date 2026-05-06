@@ -2,6 +2,8 @@
 Tema: Testare unitara in Java (T3)
 
 Acest proiect contine o aplicatie Java pentru clasificarea triunghiurilor si o suita de teste unitare bazate pe JUnit 5.
+Se da problema de clasificare a triungiurilor, primind lungimile laturilor ca si informatie, dupa conditiile de baza:
+- tipul: dreptunghic, isoscel, echilateral
 
 ## Continut
 - `src/main/java/ro/edu/fmi/tss` - cod sursa aplicatie

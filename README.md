@@ -3,7 +3,7 @@
 ## Tema proiectului
 Tema: T3 Testare unitara in Java.
 
-Obiectivul acestui proiect este sa arate utilizarea unui framework Java de testare unitara pentru o componenta de clasificare triunghiuri, completata cu strategii de testare avansate, masuratori de acoperire si analiza mutantilor.
+Obiectivul acestui proiect este sa arate utilizarea unui framework Java de testare unitara pentru o componenta de clasificare a triunghiurilor, completata cu strategii de testare avansate, masuratori de acoperire si analiza mutantilor.
 
 Proiectul extinde o tema simpla prin:
 - clasificarea tipului de triunghi (`EQUILATERAL`, `ISOSCELES`, `SCALENE`, `RIGHT_SCALENE`, `INVALID`)
@@ -33,7 +33,7 @@ O clasa de echivalenta este un set de intrari care produc acelasi comportament. 
 - `EQUILATERAL` - toate laturile egale: `5,5,5`
 - `ISOSCELES` - exact doua laturi egale: `5,5,7`
 - `SCALENE` - toate laturile diferite: `4,5,6`
-- `RIGHT_SCALENE` - triunghi dreptunghic scalene: `3,4,5`, inclusiv ordine nesortata `5,3,4`
+- `RIGHT_SCALENE` - triunghi dreptunghic scalen: `3,4,5`, inclusiv ordine nesortata `5,3,4`
 
 ### 2. Analiza valorilor de frontiera
 Valorile de frontiera testeaza limitele conditiilor boolean:
